@@ -86,7 +86,8 @@
             password.addEventListener('input',function(){
                 let minimumEightCharacters = RegExp('([A-Za-z]){8,}');
                 let atleastOneUpperCase = RegExp('^[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*$')
-                if(minimumEightCharacters.test(password.value)&& atleastOneUpperCase.test(password.value))
+                let atleastOneNumeric = RegExp('^[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*$')
+                if(minimumEightCharacters.test(password.value)&& atleastOneUpperCase.test(password.value) && atleastOneNumeric.test(password.value))
                 if(passwordRegex.test(password.value))
                     passwordError.textContent = "";
                 else passwordError.textContent = "password is Incorrect";
